@@ -1,0 +1,20 @@
+name       : libpqxx
+version    : 4.0.1
+release    : 1
+source     :
+    - http://pqxx.org/download/software/libpqxx/libpqxx-4.0.1.tar.gz : 097ceda2797761ce517faa5bee186c883df1c407cb2aada613a16773afeedc38
+license    : BSD-3-Clause
+component  : programming
+summary    : C++ client API for PostgreSQL
+description: |
+    C++ client API for PostgreSQL
+builddeps  :
+    - pkgconfig(libpq)
+setup      : |
+    %configure \
+        --disable-static \
+        --enable-shared
+build      : |
+    %make
+install    : |
+    %make_install
